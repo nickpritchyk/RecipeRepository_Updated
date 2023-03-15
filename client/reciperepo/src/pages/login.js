@@ -7,7 +7,7 @@ function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loginState, setLoginState] = useState('');
-    const [nav, setNav] = useState('false');
+    const [nav, setNav] = useState();
 
     // console.log(username, password)
 
@@ -18,10 +18,10 @@ function Login() {
         }).then((response) => {
             if(response.data.message) {
                 setLoginState(response.data.message)
-                setNav(true)
-                return(nav)
+                setNav(response.data.message)
             } else {
-                setLoginState(response.data[0].username)
+                setNav(response.data[0].username)
+                // setLoginState(response.data[0].username)
             }
         });
     };
@@ -32,19 +32,21 @@ function Login() {
         <div className="login">
             <div>
                 <label> Username </label>
-                <input placeholder="Enter your username" onChange={(e) => setUsername(e.target.value)}/>
+                <input className='input' placeholder="Enter your username" onChange={(e) => setUsername(e.target.value)}/>
             </div>
             <div>
                 <label> Password </label>
-                <input placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)}/>
+                <input className='input' placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)}/>
             </div>
-            <div>
-            <button onClick={login}>
-                Log in
-            </button>
+            <div className='login-page-btn'>
+            <button style={{all: 'unset'}} onClick={() => {
+                    login()
+                    loginState ? navigate("/") : navigate("/login");}}>
+                    Log in
+                </button>
             </div>
             <p>
-                {loginState}
+                {nav}
             </p>
         </div>
     )

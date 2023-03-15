@@ -25,6 +25,7 @@ app.post('/register', (req, res) => {
             else if(results.length > 0) {
                 res.send({ message: "Username already exists"});
             } else {
+                res.send({ message: ""})
                 db.query("INSERT INTO users (username, password) VALUES (?,?)", [username, password],
                     (err, results) => {
                     console.log(err);

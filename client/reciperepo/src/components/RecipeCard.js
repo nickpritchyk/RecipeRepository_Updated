@@ -16,6 +16,7 @@ const RecipeCard = ({results}) => {
                         bulk of the card's content.
                     </Card.Text>
                 </Card.Body>
+                <button className='favorite-btn'>Favorite</button>
             </Card>
         </Col>
             )

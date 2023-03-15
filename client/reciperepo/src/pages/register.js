@@ -10,7 +10,7 @@ function Register() {
 
     // console.log(username, password)
 
-    const Register = () => {
+    const register = () => {
         Axios.post("http://localhost:3001/register", {
         username: loginUsername,
         password: loginPassword,
@@ -27,20 +27,20 @@ function Register() {
         <div className="login">
             <div>
                 <label> Username </label>
-                <input placeholder="Enter a username" onChange={(e) => setLoginUsername(e.target.value)}/>
+                <input className="input" placeholder="Enter a username" onChange={(e) => setLoginUsername(e.target.value)}/>
             </div>
             <div>
                 <label> Password </label>
-                <input placeholder="Enter a password" onChange={(e) => setLoginPassword(e.target.value)}/>
+                <input className="input" placeholder="Enter a password" onChange={(e) => setLoginPassword(e.target.value)}/>
             </div>
-            <div>
-                <button onClick={() => {
-                    navigate("/");
-                    Register()}}>
+            <div className="login-page-btn">
+                <button style={{all: 'unset'}} onClick={() => {
+                    registeredState ? navigate("/") : navigate("/register");
+                    register()}}>
                     Register
                 </button>
             </div>
-            {registeredState &&
+           {registeredState &&
             <p className="msg">
                 {registeredState}
             </p>
