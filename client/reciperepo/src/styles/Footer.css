@@ -1,0 +1,25 @@
+* {
+    font-family: 'Lato', sans-serif;
+  }
+  
+  
+  .footer {
+      background: beige;
+      margin-top: auto;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+  .socialMedia svg {
+      color: black;
+      margin: 0px 20px 0px 10px;
+      font-size: 50px;
+      cursor: pointer;
+  }
+  
+  .footer p {
+      color: black;
+      margin-top: 1%;
+    }

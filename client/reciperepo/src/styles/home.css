@@ -1,0 +1,40 @@
+.search-bar-container {
+    margin-top: 10%;
+}
+
+.search-page h1 {
+    margin-top: 2%;
+    color: bisque;
+    background-image: linear-gradient(to left, #21160C, #E9BF94);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    border-radius: 15px;
+    margin: 30px;
+    border: 2px solid black;
+    box-shadow: 0px 1px 5px 1px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+
+.search-page {
+    display: grid;
+    justify-content: center;
+}
+
+.search-page .login-btn {
+    display: grid;
+    color: blue;
+    background-color: white;
+    width: fit-content;
+    place-self: stretch center;
+    background-color: bisque;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 1.2px;
+    margin-top: 10px;
+}
+
+.search-page link {
+    text-decoration: none;
+}
