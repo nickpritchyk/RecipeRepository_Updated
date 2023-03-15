@@ -17,10 +17,22 @@ app.post('/register', (req, res) => {
     const username = req.body.username
     const password = req.body.password
 
-    db.query("INSERT INTO users (username, password) VALUES (?,?)", [username, password],
+    db.query("SELECT * FROM users WHERE username=? AND password=?", [username, password],
         (err, results) => {
-            console.log(err);
-        })
+            if (err) {
+                 res.send({err: err});
+            }
+            else if(results.length > 0) {
+                res.send({ message: "Username already exists"});
+            } else {
+                db.query("INSERT INTO users (username, password) VALUES (?,?)", [username, password],
+                    (err, results) => {
+                    console.log(err);
+            })
+            }
+        }
+    )
+
 })
 
 app.post('/login', (req, res) => {

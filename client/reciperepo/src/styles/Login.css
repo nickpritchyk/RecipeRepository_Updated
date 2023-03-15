@@ -2,3 +2,15 @@
     display: grid;
     grid-column: 2;
 }
+
+.msg {
+    color: black;
+    font-weight: bold;
+    background-color: bisque;
+    place-self: stretch center;
+    border: 1px solid black;
+    box-shadow: 0px 1px 4px 1px;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 10px;
+}
