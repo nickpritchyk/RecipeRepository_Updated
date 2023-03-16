@@ -1,15 +1,15 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import '../styles/Login.css'
 import Axios from 'axios'
 import {useNavigate} from 'react-router-dom';
+import Favorites from '../pages/favorites.js'
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [loginState, setLoginState] = useState('');
-    const [nav, setNav] = useState();
+    const [loginState, setLoginState] = useState("");
 
-    // console.log(username, password)
+    // console.log(loginState)
 
     const login = () => {
         Axios.post("http://localhost:3001/login", {
@@ -17,16 +17,23 @@ function Login() {
         password: password,
         }).then((response) => {
             if(response.data.message) {
+                // console.log("Inside TRUE")
                 setLoginState(response.data.message)
-                setNav(response.data.message)
             } else {
-                setNav(response.data[0].username)
-                // setLoginState(response.data[0].username)
+                // console.log('Inside FALSE')
+                setLoginState(response.data[0].username)
             }
         });
     };
 
     const navigate = useNavigate();
+    useEffect(() => {
+        Axios.get("http://localhost:3001/login").then((response) => {
+            if(response.data.loggedIn == true){
+            setLoginState(response.data.user[0].username)
+            }
+    })
+    }, []);
 
     return(
         <div className="login">
@@ -40,13 +47,12 @@ function Login() {
             </div>
             <div className='login-page-btn'>
             <button style={{all: 'unset'}} onClick={() => {
-                    login()
-                    loginState ? navigate("/") : navigate("/login");}}>
+                    login()}}>
                     Log in
-                </button>
+            </button> 
             </div>
             <p>
-                {nav}
+                {loginState}
             </p>
         </div>
     )

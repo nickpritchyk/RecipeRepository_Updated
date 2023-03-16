@@ -6,6 +6,9 @@ import Navbar from './components/NavBar';
 import Footer from "./components/Footer";
 import Login from "./pages/login";
 import Register from './pages/register';
+import Axios from 'axios';
+
+Axios.defaults.withCredentials = true;
 
 function App() {
 

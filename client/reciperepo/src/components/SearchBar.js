@@ -30,8 +30,7 @@ export const SearchBar = () => {
         <Container>
             <Row>
             <form className='search-div' onSubmit={handleSearch}>
-                <input type="text" placeholder="Search for recipes..." onChange={(e) =>  setSearch(e.target.value)}/>
-                <button className='search-btn' type='submit' onSubmit={handleSearch}> <FaSearch/></button>
+                <input type="text" placeholder="Search for recipes..." onChange={(e) =>  setSearch(e.target.value)}/><button className='search-btn' type='submit' onSubmit={handleSearch}> <FaSearch/></button>
             </form>
             </Row>
             <Container>

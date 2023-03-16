@@ -34,11 +34,10 @@ function Register() {
                 <input className="input" placeholder="Enter a password" onChange={(e) => setLoginPassword(e.target.value)}/>
             </div>
             <div className="login-page-btn">
-                <button style={{all: 'unset'}} onClick={() => {
-                    registeredState ? navigate("/") : navigate("/register");
+            <button style={{all: 'unset'}} onClick={() => {
                     register()}}>
                     Register
-                </button>
+            </button> 
             </div>
            {registeredState &&
             <p className="msg">

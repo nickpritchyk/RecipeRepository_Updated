@@ -8,10 +8,11 @@
     box-shadow: 0px 0px 10px 2px;
     border-radius: 10px 0px 0px 10px;
     text-align: center;
+    font-size: 18px;
+    position: relative;
 }
 
 .search-div {
-    font-size: 18px;
     display: flex;
     align-items: center;
     margin-bottom: 10%;
@@ -19,10 +20,6 @@
 }
 
 .search-btn {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: yellow;
     height: 3.5vh;
     width: 2vw;
@@ -30,6 +27,7 @@
     border-radius: 0px 10px 10px 0px;
     box-shadow: 5px 0px 15px 2px;
     color: black;
+    width: fit-content;
 }
 
 .card:hover:hover {

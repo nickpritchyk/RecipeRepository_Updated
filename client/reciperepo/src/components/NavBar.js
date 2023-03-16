@@ -21,6 +21,11 @@ function NavBar() {
             <ReorderIcon /></button>
         </div>
         <div className='links'>
+            <div className='h1'>
+                <Link style={{ backgroundColor: 'transparent', boxShadow: 'none'}}className='h1-link' to='/'>
+                    RecipeRepo
+                </Link>
+            </div>
             <Link to='/'> Home </Link>
             <Link to='/favorites'> Favorites </Link>
         </div>
