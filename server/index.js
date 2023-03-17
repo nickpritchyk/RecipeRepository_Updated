@@ -20,7 +20,7 @@ app.use(session({
     secret: "Steamboat202301!NicholasPritchyk",
     resave: false,
     saveUninitialized: false,
-    cookie: { expires: 60*60*24,
+    cookie: { expires: 60*60*1000,
     }
 }))
 

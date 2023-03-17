@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-image: url(./img/final_bg.jpg);
+  /* background-image: url(./img/final_bg.jpg); */
+  background-color: white;
   background-size: cover;
   display: flex;
   flex-direction: column;

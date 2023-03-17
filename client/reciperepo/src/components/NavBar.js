@@ -26,8 +26,10 @@ function NavBar() {
                     RecipeRepo
                 </Link>
             </div>
-            <Link to='/'> Home </Link>
-            <Link to='/favorites'> Favorites </Link>
+            <div className='navbar-links'>
+                <Link to='/'> Home </Link>
+                <Link to='/favorites'> Favorites </Link>
+            </div>
         </div>
     </div>
   )

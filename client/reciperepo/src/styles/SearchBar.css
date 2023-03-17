@@ -1,18 +1,14 @@
-.search-div input {
-    background-color: bisque;
-    color: black;
+/* .input {
+    background-color: white;
     outline: none;
     width: 33vw;
-    height: 3.5vh;
-    border: 1px solid;
+    border: 0px solid;
     box-shadow: 0px 0px 10px 2px;
     border-radius: 10px 0px 0px 10px;
     text-align: center;
-    font-size: 18px;
-    position: relative;
-}
+} */
 
-.search-div {
+/* .search-div {
     display: flex;
     align-items: center;
     margin-bottom: 10%;
@@ -20,15 +16,51 @@
 }
 
 .search-btn {
-    background-color: yellow;
-    height: 3.5vh;
-    width: 2vw;
+    background-color: navy;
     border: 1px solid;
     border-radius: 0px 10px 10px 0px;
     box-shadow: 5px 0px 15px 2px;
     color: black;
     width: fit-content;
+} */
+
+.search-bar {
+    display: inline-flex;
 }
+
+.search-bar .input {
+    height: max-content;
+    background: white;
+    border: 1px solid gray;
+    border-right: 0px;
+    border-radius: 10px 0px 0px 10px;
+    color: black;
+    box-shadow: 1px 1px 1px 1px gray;
+    width: 33vw;
+    outline: none;
+}
+
+.search-btn {
+    height: max-content;
+    margin-top: 15px;
+    background: transparent;
+    border: 1px solid gray;
+    border-left: 0;
+    border-radius: 0px 5px 5px 0px;
+    box-shadow: 1px 2px 1px 0px gray;
+    width: fit-content;
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
 
 .card:hover:hover {
     transform: scale(1.03);
