@@ -55,12 +55,13 @@ function Login() {
                     Log in
             </button> 
             </div>
-            <p className='login-page-btn'>
-                {loginState && 
-                <Link style={{all: 'unset', textDecoration: 'none'}} to='/'> 
-                    <button style={{all: 'unset'}}> Go Home </button>
-                </Link>}
-            </p>
+            {loginState && 
+                <p className='login-page-btn'>
+                    <Link style={{all: 'unset', textDecoration: 'none'}} to='/'> 
+                        <button style={{all: 'unset'}}> Go Home </button>
+                    </Link>
+                </p>
+            }
         </div>
     )
 }
