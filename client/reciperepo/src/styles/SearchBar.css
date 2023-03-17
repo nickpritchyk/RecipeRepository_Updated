@@ -29,6 +29,7 @@
 }
 
 .search-bar .input {
+    font-family:'Courier New', Courier, monospace;
     height: max-content;
     background: white;
     border: 1px solid gray;
@@ -49,7 +50,8 @@
     border-radius: 0px 5px 5px 0px;
     box-shadow: 1px 2px 1px 0px gray;
     width: fit-content;
-    background-color: red;
+    padding-inline: 8px;
+    background-color: salmon;
 }
 
 

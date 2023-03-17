@@ -28,10 +28,10 @@ function Home() {
           <div className="dropdown">
             <ul style={{listStyleType: 'none', margin: 0 ,padding:0}}>
               <li>
-                <Link to="/login" style={{textDecoration: 'none'}}>Log in Here</Link>
+                <Link to="/login" style={{textDecoration: 'none', color: 'black', fontFamily: 'Courier New', Courier: 'monospace'}}>Log in Here</Link>
               </li>
               <li>
-                <Link to="/register" style={{textDecoration: 'none'}}>Register Here</Link>
+                <Link to="/register" style={{textDecoration: 'none', color: 'black', fontFamily: 'Courier New', Courier: 'monospace'}}>Register Here</Link>
               </li>
             </ul>
           </div>

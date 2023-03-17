@@ -1,0 +1,15 @@
+* {
+    font-family:'Courier New', Courier, monospace;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.card-body {
+    font-size: 18px;
+}
+
+.favorite-btn {
+    background-color: salmon;
+}
