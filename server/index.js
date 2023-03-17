@@ -54,6 +54,47 @@ app.post('/register', (req, res) => {
 
 })
 
+app.post('/', (req, res) => {
+    const favorite = req.body.favorite;
+    console.log("Fav: ", favorite)
+    const username = req.body.username;
+    // console.log("user: ", username)
+
+    let userid;
+
+    db.query("SELECT userid FROM users WHERE username=?", [username],
+    (err, results) => {
+        if (err){
+            // res.send({err: err})
+        } else if(results.length > 0){
+                userid = results[0].userid;
+                    db.query("SELECT * FROM favorites WHERE favoriteID=? AND userid=?", [favorite, userid],
+                        (err, results) => {
+                    if (err) {
+                        res.send({err: err});
+                        console.log("err");
+                    }
+                    else if(results.length > 0) {
+                        console.log("Already in favorites");
+                        res.send({ message: "Already in favorites"});
+                    } else if(favorite != 0) {
+                        res.send({ message: ""})
+                        console.log("Inserting");
+                        db.query("INSERT INTO favorites (favoriteID, userid) VALUES (?, ?)", [favorite, userid],
+                            (err, results) => {
+                            console.log(err);
+                    })
+                    }
+                }
+            )
+        } else {
+            res.send({message: "Not logged in"})
+        }
+    })
+
+    // console.log(userid);
+})
+
 app.get("/login", (req, res) => {
     if (req.session.user) {
         res.send({loggedIn: true, user: req.session.user})

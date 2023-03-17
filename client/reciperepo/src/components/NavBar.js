@@ -2,9 +2,18 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import "../styles/Navbar.css";
 import ReorderIcon from '@mui/icons-material/Reorder'
+import Axios from 'axios';
 
 function NavBar() {
     const location = useLocation();
+    const [loginState, setLoginState] = useState("");
+
+   
+      Axios.get("http://localhost:3001/login").then((response) => {
+          if(response.data.loggedIn == true){
+          setLoginState(response.data.user[0].username)
+          }
+  })
 
     useEffect(() => {
         setExpandNavbar(false);
@@ -29,6 +38,9 @@ function NavBar() {
             <div className='navbar-links'>
                 <Link to='/'> Home </Link>
                 <Link to='/favorites'> Favorites </Link>
+            </div>
+            <div className='user-heading'>
+                {loginState}
             </div>
         </div>
     </div>

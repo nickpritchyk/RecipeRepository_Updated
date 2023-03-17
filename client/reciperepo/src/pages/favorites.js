@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import  Login  from '../pages/login.js';
 import Axios from 'axios';
 function Favorites () {
     // console.log(login_State)

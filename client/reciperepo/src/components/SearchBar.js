@@ -17,7 +17,7 @@ export const SearchBar = () => {
         e.preventDefault();
         setLoading(true);
         // const tester = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=63bbfa20bb0d42b8927bc25fe8795946&query=' + search + ''
-        fetch('https://api.spoonacular.com/recipes/complexSearch?apiKey=63bbfa20bb0d42b8927bc25fe8795946&query=' + search + '')
+        fetch('https://api.spoonacular.com/recipes/complexSearch?apiKey=63bbfa20bb0d42b8927bc25fe8795946&query=' + search + '&number=20')
             .then(response => response.json())
             .then((json) => {
                 setResults(json.results);
@@ -29,6 +29,9 @@ export const SearchBar = () => {
     return (
         <div>
             {/* <div className='search-div'> */}
+            <div className='slide-deck-home'>
+
+            </div>
             <form className='search-bar'onSubmit={handleSearch}>
                 <input className="input" placeholder="Search for recipes..." onChange={(e) =>  setSearch(e.target.value)}/>
                 <button className='search-btn' type='submit' onSubmit={handleSearch}> <FaSearch/></button>

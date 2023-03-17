@@ -20,6 +20,7 @@
   }
   
   .links {
+    gap: 50px;
     height: 7vh;
     margin-left: 2%;
     align-items: center;
@@ -55,6 +56,13 @@
     border: none;
     color: white;
     cursor: pointer;
+  }
+
+  .user-heading {
+    font-weight: bold;
+    font-size: 30px;
+    color: salmon;
+    font-family:'Courier New', Courier, monospace;
   }
   
   #open {

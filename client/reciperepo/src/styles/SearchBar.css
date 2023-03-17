@@ -55,14 +55,10 @@
 }
 
 
-
-
-
-
-
-
-
-
+.slide-deck-home {
+    display: flex;
+    margin: 3%;
+}
 
 .card:hover:hover {
     transform: scale(1.03);
