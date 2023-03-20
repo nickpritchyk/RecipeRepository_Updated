@@ -8,15 +8,13 @@ function NavBar() {
     const location = useLocation();
     const [loginState, setLoginState] = useState("");
 
-   
-      Axios.get("http://localhost:3001/login").then((response) => {
+    useEffect(() => {
+        setExpandNavbar(false);
+        Axios.get("http://localhost:3001/login").then((response) => {
           if(response.data.loggedIn == true){
           setLoginState(response.data.user[0].username)
           }
   })
-
-    useEffect(() => {
-        setExpandNavbar(false);
     }, [location]);
 
     const [expandNavbar, setExpandNavbar] = useState(false);
