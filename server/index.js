@@ -134,6 +134,21 @@ app.post('/login', (req, res) => {
     )
 });
 
+app.post('/favorites', (req, res) => {
+    const username = req.body.username;
+
+    db.query("SELECT favorites.favoriteID FROM favorites INNER JOIN users ON users.userid=favorites.userid AND users.username=?", [username],
+    (err, results) => {
+        if(err) {
+            res.send({err: err})
+        } else if(results.length > 0) {
+            res.send(results)
+        } else {
+            res.send({message: "No favorites found"})
+        }
+    })
+})
+
 app.listen(3001, () => {
     console.log("Server running on PORT: 3001");
 })
