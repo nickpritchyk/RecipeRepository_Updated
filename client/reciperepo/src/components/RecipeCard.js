@@ -10,7 +10,7 @@ const RecipeCard = ({results}) => {
     let favorite = 0;
     const [favoriteState, setFavoriteState] = useState(false);
     const [loginState, setLoginState] = useState("");
-    // console.log(favorite)
+    // console.log(results)
 
     const addFavorite = () => {
         Axios.post("http://localhost:3001/", {

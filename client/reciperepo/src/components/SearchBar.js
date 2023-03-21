@@ -16,8 +16,7 @@ export const SearchBar = () => {
     const handleSearch = async(e) => {
         e.preventDefault();
         setLoading(true);
-        // const tester = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=63bbfa20bb0d42b8927bc25fe8795946&query=' + search + ''
-        fetch('https://api.spoonacular.com/recipes/complexSearch?apiKey=63bbfa20bb0d42b8927bc25fe8795946&query=' + search + '&number=20')
+        fetch('https://api.spoonacular.com/recipes/complexSearch?apiKey=b972573ed1ca4324b1d1eeeb18e27bf6&query=' + search + '&number=20')
             .then(response => response.json())
             .then((json) => {
                 setResults(json.results);
