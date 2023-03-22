@@ -6,59 +6,40 @@ import FavoritesCard from '../components/FavoritesCard'
 
 
 function Favorites () {
-    // console.log(login_State)
     const [loginState, setLoginState] = useState("");
-    // const [favoriteID, setFavoriteID] = useState([]);
-    // const [favResult, setFavResults] = useState();
-    const [favArray, setFavArray] = useState();
-    const [resultsData, setResultsData] = useState({});
-    const [loading, setLoading] = useState(false)
+    const [resultsData, setResultsData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    let temp_favArr;
 
     const loginFetch = () => {
       Axios.get("http://localhost:3001/login").then((response) => {
         if(response.data.loggedIn === true){
           setLoginState(response.data.user[0].username);
+          temp_favArr = response.data.user[0].username;
+
+          Axios.post("http://localhost:3001/favorites", {
+            username: temp_favArr
+          })
+          .then((response) => {
+            setLoading(true);
+            var newArr = [];
+            for(let i=0; i<response.data.length; i++){
+              fetch('https://api.spoonacular.com/recipes/' + response.data[i].favoriteID + '/information?apiKey=5a606dfe5c174e9a8738fec6292cad78')
+                .then(response => response.json())
+                .then((data) => {
+                  newArr.push(data);
+                  setResultsData(newArr);
+                });
+                setLoading(false);
+            }
+          })
         }
 
-        Axios.post("http://localhost:3001/favorites", {
-          username: response.data.user[0].username
-        })
-          .then(() => {
-            setFavArray(response.data);
-            // fetchFavorites()
-            // console.log("FAV ARRAY: ", favArray)
-          })
-        
       })
     }
 
-    const fetchFavorites = () => {
-      setLoading(true);
-      fetch('https://api.spoonacular.com/recipes/644366/information?apiKey=b972573ed1ca4324b1d1eeeb18e27bf6')
-          .then(response => response.json())
-          .then((data) => {
-            let temp = data
-            setLoading(false);
-            setResultsData(temp);
-              // console.log("REAL SHIT: ", resultsData)
-          });
-        }
-
-    // const fetchFavArray = () => {
-    //   Axios.post("http://localhost:3001/favorites", {
-    //       username: loginState
-    //     })
-    //       .then((response) => {
-    //         setFavArray(response.data);
-            
-    //       })
-    // } 
-
     useEffect(() => {
-      // loginFetch();
-      fetchFavorites();
-
-
+      loginFetch();
   }, []);
   // console.log(favArray)
   // console.log(resultsData)
@@ -67,16 +48,18 @@ function Favorites () {
     // c2fa0d46b1eb4021943dad1c0672e6a2 
 
       return(
+        (resultsData) &&
           <div className='favorites'>
             <Container>
                 <Row>
-                {loading ? ( <h3>Loading...</h3>
+                {loading ? ( <h3>You do not have any favorites</h3>
                 ) : (
                     <FavoritesCard resultsData={resultsData}/>
                 )}
                 </Row>
             </Container>
           </div>
+                
         // <div></div>
 )
 }
