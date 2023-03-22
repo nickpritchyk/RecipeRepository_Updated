@@ -24,7 +24,7 @@ function Favorites () {
             setLoading(true);
             var newArr = [];
             for(let i=0; i<response.data.length; i++){
-              fetch('https://api.spoonacular.com/recipes/' + response.data[i].favoriteID + '/information?apiKey=5a606dfe5c174e9a8738fec6292cad78')
+              fetch('https://api.spoonacular.com/recipes/' + response.data[i].favoriteID + '/information?apiKey=d2ce296a1d0c42a49d2d707634976ee9')
                 .then(response => response.json())
                 .then((data) => {
                   newArr.push(data);

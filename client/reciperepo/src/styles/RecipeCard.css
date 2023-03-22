@@ -11,6 +11,8 @@
 }
 
 .favorite-btn {
-    background-color: salmon;
+    background-color: white;
     border: none;
+    color: goldenrod;
+    margin-bottom: 10px;
 }
