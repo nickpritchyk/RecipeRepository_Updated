@@ -20,8 +20,7 @@ app.use(session({
     secret: "Steamboat202301!NicholasPritchyk",
     resave: false,
     saveUninitialized: false,
-    cookie: { expires: 60*60*1000,
-    }
+    cookie: { expires: 60*60*1000}
 }))
 
 const db = mysql.createConnection({
@@ -103,6 +102,13 @@ app.get("/login", (req, res) => {
     }
 })
 
+app.get("/logout", (req, res) => {
+    if(req.session.user){
+        req.session.destroy();
+        // req.session.cookie.expires = new Date();
+    }
+})
+
 app.post('/login', (req, res) => {
     const username = req.body.username
     const password = req.body.password
@@ -127,6 +133,7 @@ app.post('/login', (req, res) => {
 });
 
 app.post('/favorites', (req, res) => {
+    console.log(req.session)
     const username = req.body.username;
 
     db.query("SELECT favorites.favoriteID FROM favorites INNER JOIN users ON users.userid=favorites.userid AND users.username=?", [username],

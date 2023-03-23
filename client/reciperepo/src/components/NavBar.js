@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import "../styles/Navbar.css";
 import ReorderIcon from '@mui/icons-material/Reorder'
 import Axios from 'axios';
@@ -7,15 +7,25 @@ import Axios from 'axios';
 function NavBar() {
     const location = useLocation();
     const [loginState, setLoginState] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         setExpandNavbar(false);
         Axios.get("http://localhost:3001/login").then((response) => {
-          if(response.data.loggedIn == true){
+          if(response.data.loggedIn === true){
           setLoginState(response.data.user[0].username)
           }
   })
     }, [location]);
+
+    function handleLogout() {
+        navigate('/')
+        setLoginState("")
+        Axios.get("http://localhost:3001/logout").then((response) => {
+          if(response){
+            console.log(response)
+          }
+    })}
 
     const [expandNavbar, setExpandNavbar] = useState(false);
   return (
@@ -40,9 +50,14 @@ function NavBar() {
             <div className='user-heading'>
                 {loginState}
             </div>
+            <div className='user-heading'>
+                <button onClick={handleLogout} style={{backgroundColor: 'transparent', border: 'none', color: 'salmon'}}>
+                    <h5>Log out</h5>
+                </button>
+            </div>
         </div>
     </div>
   )
 }
 
-export default NavBar
+export default NavBar;
