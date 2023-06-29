@@ -31,13 +31,13 @@ export const SearchBar = () => {
                 <input className="input" placeholder="Search for recipes..." onChange={(e) =>  setSearch(e.target.value)}/>
                 <button className='search-btn' type='submit' onSubmit={handleSearch}> <FaSearch/></button>
             </form>
-            <Container>
-                <Row>
-                {loading ? ( <h3>Loading...</h3>
-                ) : (
-                    <RecipeCard results={results}/>
-                )}
-                </Row>
+            <Container style={{marginBottom: '8rem', display: 'flex', flexWrap: 'wrap' }}>
+                <span className='span-deck'>
+                    {loading ? ( <h3>Loading...</h3>
+                    ) : (
+                        <RecipeCard results={results}/>
+                    )}
+                </span>
             </Container>
         </div>
     );

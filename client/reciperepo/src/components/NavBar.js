@@ -33,22 +33,25 @@ function NavBar() {
   return (
     <div className='navbar' id={expandNavbar ? "open" : "close"}> 
         <div className='toggleButton'>
+            <div id={expandNavbar ? "open" : "close"}>
+                <Link style={{ backgroundColor: 'transparent', boxShadow: 'none'}}className='h1-popup' to='/'>
+                    RecipeRepo
+                </Link>
+            </div>
+
             <button onClick={() => {
                 setExpandNavbar((prev) => !prev);
                 }}
             > 
             <ReorderIcon /></button>
-        </div>
-        <div className='close-btn'>
-            <button onClick={() => {
-                setExpandNavbar((prev) => !prev);
-                }}
-            >
-            <HighlightOffIcon style={{fontSize: '50px'}}/></button>
+
         </div>
         <div className='links'>
             <div className='h1'>
                 <Link style={{ backgroundColor: 'transparent', boxShadow: 'none'}}className='h1-link' to='/'>
+                    <HighlightOffIcon style={{fontSize: '50px'}}/>
+                </Link>
+                <Link style={{ backgroundColor: 'transparent', boxShadow: 'none'}}className='h1-link-closed' to='/'>
                     RecipeRepo
                 </Link>
             </div>
