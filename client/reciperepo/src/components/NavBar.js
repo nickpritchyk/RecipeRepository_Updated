@@ -46,7 +46,7 @@ function NavBar() {
             <ReorderIcon /></button>
 
         </div>
-        <div className='links'>
+        <div className='links' id={expandNavbar ? "open" : "close"}>
             <div className='h1'>
                 <Link style={{ backgroundColor: 'transparent', boxShadow: 'none'}}className='h1-link' to='/'>
                     <HighlightOffIcon style={{fontSize: '50px'}}/>

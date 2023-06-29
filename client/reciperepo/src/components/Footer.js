@@ -14,8 +14,7 @@ function footer() {
             <GitHubIcon/>
             </a>
         </div>
-            <p> 2023 &copy; NicholasPritchyk.com
-            Image by <a href="https://www.freepik.com/free-vector/gradient-white-monochrome-background_15694146.htm#page=5&query=minimalist%20background&position=0&from_view=keyword&track=ais">Freepik</a> </p>
+            <p> 2023 &copy; NicholasPritchyk </p>
     </div>
   )
 }

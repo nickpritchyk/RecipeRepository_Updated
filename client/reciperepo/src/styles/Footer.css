@@ -26,3 +26,18 @@
       color: black;
       margin-top: 1%;
     }
+
+
+  @media only screen and (max-width: 600px) {
+    .footer {
+      flex-direction: column;
+    }
+    .socialMedia svg {
+      font-size: 35px;
+      margin: 0.1rem;
+      width: 5rem;
+    }
+    .footer p {
+      margin: 0;;
+    }
+  }

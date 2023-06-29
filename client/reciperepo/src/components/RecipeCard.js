@@ -41,25 +41,24 @@ const RecipeCard = ({results}) => {
     return(
         results.map((item, i) => {
             return(
-        <Col className='mt-5' xs={6} md={4}>
-            <Card className='card-hover'>
-                <Card.Img fluid className='img' variant="top" src={item.image} />
-                <Card.Body className='card-body'>
-                    <Card.Title className='title' >{item.title}</Card.Title>
-                    <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                    </Card.Text>
-                </Card.Body>
-                <button key={i} className='favorite-btn' onClick={() => {
-                    favorite=(item.id);
-                    addFavorite();
-                    setFavColor(i);
-                }}>
-                    <StarIcon style={{fontSize: '35px', color: favColor == i ? item.color: 'salmon'}}></StarIcon>
-                </button>
-            </Card>
-        </Col>
+            <Col className='mt-5' xs={10} md={4}>
+                <Card className='card-hover'>
+                    <Card.Img fluid className='img' variant='top' src={item.image} />
+                    <Card.Body className='card-body'>
+                        <Card.Title className='title' >{item.title}</Card.Title>
+                        <Card.Text>
+                            {item.id}
+                        </Card.Text>
+                    </Card.Body>
+                    <button key={i} className='favorite-btn' onClick={() => {
+                        favorite=(item.id);
+                        addFavorite();
+                        setFavColor(i);
+                    }}>
+                        <StarIcon style={{fontSize: '35px', color: favColor == i ? item.color: 'salmon'}}></StarIcon>
+                    </button>
+                </Card>
+            </Col>
             )
         })
     )

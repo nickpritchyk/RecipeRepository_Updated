@@ -89,14 +89,6 @@
     height: 100%;
   }
 
-  /* #close .h1-link {
-    display: flex;
-  } */
-  
-  /* #open button {
-    display: none;
-  } */
-
   @media only screen and (max-width: 900px) {
     .navbar a {
       width: fit-content;
@@ -104,8 +96,16 @@
   }
   
   @media only screen and (max-width: 600px) {
+    #open .links {
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      overflow: hidden;
+    }
     .navbar {
       border-bottom: none;
+      position: relative;
+      z-index: 1;
     }
     .toggleButton {
       display: flex;
@@ -130,7 +130,7 @@
     }
     .h1 {
       height: 100%;
-      width: 100%;
+      width: 100vw;
       display: flex;
       justify-content: center;
     }
