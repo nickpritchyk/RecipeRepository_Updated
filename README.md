@@ -14,5 +14,6 @@ WIP - Deployment
 
 
 
-<img width="1800" alt="Screenshot 2023-06-29 at 5 34 20 PM" src="https://github.com/nickpritchyk/RecipeRepository_Updated/assets/62455273/c88b4f53-13d4-4085-a5a8-659e1d6907db">
-![Uploading Screenshot 2023-06-29 at 5.34.50 PM.png…]()
+<img width="1500" alt="Screenshot 2023-06-29 at 5 34 20 PM" src="https://github.com/nickpritchyk/RecipeRepository_Updated/assets/62455273/c88b4f53-13d4-4085-a5a8-659e1d6907db">
+
+<img width="285" alt="Screenshot 2023-06-29 at 5 34 50 PM" src="https://github.com/nickpritchyk/RecipeRepository_Updated/assets/62455273/c06f4d2d-56ef-44a1-8f4d-73973801f7d1">
