@@ -19,26 +19,9 @@ function Home() {
 
   return (
     <div className='search-page'>
-        <SearchBar />
-        {!loginState &&
-
-        <div className="login-btn">
-          <button onClick={() => setDropdown(dropdown ? false : true)} className="login-btn-top">Log in/Register Here</button>
-          {dropdown &&
-          <div className="dropdown">
-            <ul style={{listStyleType: 'none', margin: 0 ,padding:0}}>
-              <li>
-                <Link to="/login" style={{textDecoration: 'none', color: 'black', fontFamily: 'Courier New', Courier: 'monospace'}}>Log in Here</Link>
-              </li>
-              <li>
-                <Link to="/register" style={{textDecoration: 'none', color: 'black', fontFamily: 'Courier New', Courier: 'monospace'}}>Register Here</Link>
-              </li>
-            </ul>
-          </div>
-          } 
-        </div>
-        
-        }
+       {/* {!loginState &&
+      }  */}
+        <SearchBar/>
     </div>
   )
 }

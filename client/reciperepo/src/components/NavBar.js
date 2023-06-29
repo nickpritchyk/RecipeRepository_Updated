@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import "../styles/Navbar.css";
 import ReorderIcon from '@mui/icons-material/Reorder'
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu'
 import Axios from 'axios';
 
 function NavBar() {
@@ -37,6 +39,13 @@ function NavBar() {
             > 
             <ReorderIcon /></button>
         </div>
+        <div className='close-btn'>
+            <button onClick={() => {
+                setExpandNavbar((prev) => !prev);
+                }}
+            >
+            <HighlightOffIcon style={{fontSize: '50px'}}/></button>
+        </div>
         <div className='links'>
             <div className='h1'>
                 <Link style={{ backgroundColor: 'transparent', boxShadow: 'none'}}className='h1-link' to='/'>
@@ -52,7 +61,7 @@ function NavBar() {
             </div>
             <div className='user-heading'>
                 <button onClick={handleLogout} style={{backgroundColor: 'transparent', border: 'none', color: 'salmon'}}>
-                    <h5>Log out</h5>
+                    <h4>Logout</h4>
                 </button>
             </div>
         </div>
