@@ -27,6 +27,12 @@ export const SearchBar = () => {
 
     return (
         <div className='searchbar-container'>
+            <button style={{border: 'none', backgroundColor: 'transparent', marginBottom: '0.5rem', color: '#038aff '}}>
+                <Link style={{textDecoration: 'none'}} to='login'> Log in </Link>
+            </button> 
+            <button style={{border: 'none', backgroundColor: 'transparent', marginBottom: '1rem', color: '#038aff '}}> 
+                <Link style={{textDecoration: 'none'}} to='/register'> Register </Link>
+            </button>
             <form className='search-bar' onSubmit={handleSearch}>
                 <input className="input" placeholder="Search for recipes..." onChange={(e) =>  setSearch(e.target.value)}/>
                 <button className='search-btn' type='submit' onSubmit={handleSearch}> <FaSearch/></button>
