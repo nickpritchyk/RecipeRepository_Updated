@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
     key: "userID",
-    secret: "Steamboat202301!NicholasPritchyk",
+    secret: "*",
     resave: false,
     saveUninitialized: false,
     cookie: { expires: 60*60*1000}
@@ -26,7 +26,7 @@ app.use(session({
 const db = mysql.createConnection({
     user: "reciperepo",
     host: "localhost",
-    password: "Steamboat202301!",
+    password: "*",
     database: "reciperepo"
 });
 
